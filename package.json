@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm run build",
-    "add dependencies": "npm install --force",
+    "add_dependencies": "npm install --force",
     "build": "webpack",
     "pretty": "npx prettier --write ./public/",
     "start": "node ./server/index.js"

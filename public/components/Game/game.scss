@@ -1,0 +1,89 @@
+@import "public/index.scss";
+
+.game-field {
+    &__header-panel {
+        @include row-flexible;
+        width: 100%;
+        justify-content: space-evenly;
+        margin: 30px 0 40px;
+    }
+
+    &__smile-button {
+        @include column-flexible;
+        cursor: pointer;
+        justify-content: center;
+        padding: 3px;
+
+        &_moon {
+            background-color: #a5a6a6;
+            border: 2px solid #c9bebe;
+        }
+
+        &_sunny {
+            border: 2px solid #dca65f;
+            background-color: burlywood;
+        }
+    }
+
+    &__smile-img {
+        width: 24px;
+    }
+
+    &__bomb-img {
+        display: none;
+    }
+
+    &__flag-img {
+        display: none;
+    }
+
+    &__timer {
+        @include column-flexible;
+        color: #fce7ff;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        border: 2px solid #c9bebe;
+        padding: 3px;
+
+        &_moon {
+            border: 2px solid #c9bebe;
+            background-color: #a5a6a6;
+        }
+
+        &_sunny {
+            border: 2px solid #dca65f;
+            background-color: burlywood;
+        }
+    }
+
+    &__restart-button,
+    &__exit-button {
+        cursor: pointer;
+        color: white;
+        font-size: 18px;
+        border-radius: 6px;
+        padding: 9px;
+
+        &_moon {
+            border: 2px solid #c9bebe;
+            background-color: #a5a6a6;
+        }
+
+        &_sunny {
+            border: 2px solid #dca65f;
+            background-color: burlywood;
+        }
+    }
+}
+
+.mines-field {
+    &__canvas {
+        border: 4px solid #9da1a1;
+        margin-bottom: 100px;
+        width: 500px;
+        max-width: 80%;
+        background-color: #d1d1d1;
+        cursor: pointer;
+    }
+}

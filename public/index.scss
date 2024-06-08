@@ -1,0 +1,61 @@
+@import "public/mixins.scss";
+
+@mixin flexible {
+    display: flex;
+}
+
+@mixin row-flexible {
+    @include flexible;
+    flex-direction: row;
+}
+
+@mixin column-flexible {
+    @include flexible;
+    flex-direction: column;
+}
+
+@mixin row-reverse-flexible {
+    @include flexible;
+    flex-direction: row-reverse;
+}
+
+@mixin column-reverse-flexible {
+    @include flexible;
+    flex-direction: column-reverse;
+}
+
+@mixin none-decoration {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    border: none;
+}
+
+body {
+    position: relative;
+    @include column-flexible;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    align-items: center;
+}
+
+.body {
+    &_moon {
+        background-color: #3c3838;
+    }
+
+    &_sunny {
+        background-color: blanchedalmond;
+    }
+}
+
+@mixin invisible {
+    display: none;
+}
+
+@mixin visible {
+    display: block;
+}

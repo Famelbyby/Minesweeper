@@ -328,7 +328,11 @@ export default function renderMenu() {
             func: () => {
                 minesSpan.toggleAttr({
                     key: "data-value",
-                    value: minesInput.updateValue("mines", +localStorage.getItem('strings'), +localStorage.getItem('columns')),
+                    value: minesInput.updateValue(
+                        "mines",
+                        +localStorage.getItem("strings"),
+                        +localStorage.getItem("columns")
+                    ),
                 });
                 minesSpan.update();
                 setModeParameters("custom");

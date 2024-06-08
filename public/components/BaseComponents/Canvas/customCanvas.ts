@@ -37,6 +37,11 @@ export class CustomCanvas extends CommonComponent {
     }
 
     private generateField(clickedCeilX: number, clickedCeilY: number) {
+        const chance =
+            1 -
+            +this.fieldParameters.mines /
+                (+this.fieldParameters.strings * +this.fieldParameters.columns);
+
         this.flagImage = document.getElementById(
             "flag-img"
         ) as CanvasImageSource;
@@ -59,7 +64,7 @@ export class CustomCanvas extends CommonComponent {
 
         while (leftMines > 0) {
             if (currentX !== clickedCeilX || currentY !== clickedCeilY) {
-                if (Math.random() > 0.85 || leftCeils === leftMines) {
+                if (Math.random() > chance || leftCeils === leftMines) {
                     this.minesField[currentY][currentX] = {
                         fieldValue: MINE_CEIL,
                         openState: UNOPENED_CEIL,
@@ -282,8 +287,10 @@ export class CustomCanvas extends CommonComponent {
 
         const currentX = mouseX - (mouseX % MINE_FIELD_WIDTH);
         const currentY = mouseY - (mouseY % MINE_FIELD_HEIGHT);
-        const clickedCeilX = this.currentDifX + Math.floor(currentX / MINE_FIELD_WIDTH);
-        const clickedCeilY = this.currentDifY + Math.floor(currentY / MINE_FIELD_HEIGHT);
+        const clickedCeilX =
+            this.currentDifX + Math.floor(currentX / MINE_FIELD_WIDTH);
+        const clickedCeilY =
+            this.currentDifY + Math.floor(currentY / MINE_FIELD_HEIGHT);
 
         if (!this.hasGenerated) {
             this.generateField(clickedCeilX, clickedCeilY);
@@ -310,8 +317,10 @@ export class CustomCanvas extends CommonComponent {
 
         const currentX = mouseX - (mouseX % MINE_FIELD_WIDTH);
         const currentY = mouseY - (mouseY % MINE_FIELD_HEIGHT);
-        const clickedCeilX = this.currentDifX + Math.floor(currentX / MINE_FIELD_WIDTH);
-        const clickedCeilY = this.currentDifY + Math.floor(currentY / MINE_FIELD_HEIGHT);
+        const clickedCeilX =
+            this.currentDifX + Math.floor(currentX / MINE_FIELD_WIDTH);
+        const clickedCeilY =
+            this.currentDifY + Math.floor(currentY / MINE_FIELD_HEIGHT);
 
         if (!this.hasGenerated) {
             this.generateField(clickedCeilX, clickedCeilY);

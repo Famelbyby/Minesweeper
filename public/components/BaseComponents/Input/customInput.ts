@@ -10,7 +10,11 @@ export class CustomInput extends CommonComponent {
         super("", [], inputAttrs, inputClass);
     }
 
-    updateValue(type: "strings" | "columns" | "mines", strings: number = 1, columns: number = 1): string {
+    updateValue(
+        type: "strings" | "columns" | "mines",
+        strings: number = 1,
+        columns: number = 1
+    ): string {
         const input = document.getElementById(
             this.componentAttrs.id
         ) as HTMLInputElement;

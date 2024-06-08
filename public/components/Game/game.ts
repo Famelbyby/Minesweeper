@@ -154,6 +154,15 @@ export default function renderGame() {
         },
     ]);
 
+    minesField.addListeners([
+        {
+            event: 'contextmenu',
+            func: (event) => {
+                event.preventDefault();
+            },
+        },
+    ]);
+
     let ticker: boolean = false;
 
     document.onkeydown = (event: KeyboardEvent) => {
